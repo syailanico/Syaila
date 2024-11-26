@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pernikahan RuSya</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+
+      body {
+        color: #f5f5dc;
+        font-family: "Lora", serif;
+      }
+
+      .cover {
+        position: relative;
+        background-color: rgba(35, 22, 22, 0.332);
+        text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+      }
+
+      .cover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("background/Background3.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(1.5px);
+      }
+
+      .cover h1 {
+        font-size: 2rem;
+        margin: 1rem;
+        --animate-delay: 0.5s;
+        --animate-duration: 1000ms;
+      }
+
+      .name-cover {
+        color: #d4af37;
+        font-size: 4rem;
+        font-family: "Great Vibes", cursive;
+      }
+
+      .guest {
+        line-height: 2;
+      }
+
+      .guest h3 {
+        font-size: 1.5rem;
+      }
+
+      .cover p:nth-child(3) {
+        margin-bottom: 5rem;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .btn-cover {
+        position: relative;
+        top: 10%;
+        bottom: 0;
+        color: #fff;
+        padding: 1rem 2rem;
+        margin: 3rem 0;
+        border-radius: 10px;
+        background-color: #d4af37;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-cover i {
+        margin: 0 0.5rem;
+      }
+
+      .btn-cover:hover {
+        background-color: #b8860b;
+        cursor: pointer;
+      }
+
+      .fade-out {
+        opacity: 0;
+        transition: opacity 0.8s ease-out;
+      }
+
+      @media screen and (max-width: 740px) {
+        .cover h1 {
+          font-size: 1.5rem;
+        }
+        .name-cover {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover" id="cover">
+      <h1 class="animate__animated animate__fadeInDown animate__delay-1s">
+        The Wedding of
+      </h1>
+      <h3
+        class="name-cover animate__animated animate__fadeIn animate__delay-1s"
+      >
+        Root & Haruna
+      </h3>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">
+        Minggu, 9 Maret 2025
+      </p>
+      <div class="guest animate__animated animate__fadeIn animate__delay-1s">
+        <p>Kepada yang Terhormat Bapak/Ibu/Saudara/i</p>
+        <h3>Nama Tamu</h3>
+      </div>
+
+      <a
+        href="content.html"
+        class="btn-cover animate__animated animate__fadeInUp"
+        onclick="fadeOut (event)"
+        ><i class="fa-solid fa-book-open"></i>Open Invitation</a
+      >
+    </section>
+    <script>
+      function fadeOut(event) {
+        event.preventDefault();
+        const coverSection = document.getElementById("cover");
+        coverSection.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = event.target.href;
+        }, 800); // Menunggu 800ms (0.8 detik) sebelum berpindah halaman
+      }
+    </script>
+  </body>
+</html>
